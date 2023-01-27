@@ -24,6 +24,6 @@ h1#title {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 10px solid darkgray;
+    border: 10px solid rgb(143, 141, 141);
     border-radius: 15px;
 }
