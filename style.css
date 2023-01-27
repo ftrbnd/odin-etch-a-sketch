@@ -3,16 +3,27 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0;
+    background-color: red;
 }
 
 h1#title {
     text-align: center;
     margin: 0;
     padding: 8px;
+    color: gold;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: beige;
 }
 
-#container {
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#cells-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border: 10px solid darkgray;
+    border-radius: 15px;
 }
