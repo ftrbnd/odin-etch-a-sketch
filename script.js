@@ -8,27 +8,31 @@ function createPage() {
     
 }
 
-function loadCells(sideLength = 16) {
+function loadCells(sideLength = 16, userSelected = false) {
     const containerDiv = document.querySelector('#cells-container');
-    if (containerDiv.hasChildNodes) {
-        for (const child of containerDiv.childNodes) {
-            child.remove();
+
+    if (userSelected) {
+        const cells = document.querySelectorAll('div.cell');
+        for (const cell of cells) {
+            cell.remove();
         }
     }
 
     for (let i = 0; i < sideLength; i++) {
         const rowDiv = document.createElement('div');
         rowDiv.setAttribute('class', 'row');
-        rowDiv.style.backgroundColor = 'darkgray';
+        rowDiv.setAttribute('display', 'flex');
+        rowDiv.setAttribute('align-items', 'stretch');
     
         for (let j = 0; j < sideLength; j++) {
             const cellDiv = document.createElement('div');
             cellDiv.setAttribute('class', 'cell');
+            cellDiv.style.backgroundColor = 'darkgray';
             cellDiv.style.height = '40px';
             cellDiv.style.width = '40px';
             cellDiv.style.border = '1px dotted gray';
                 
-            rowDiv.appendChild(cellDiv);
+            containerDiv.appendChild(cellDiv);
         }
         containerDiv.appendChild(rowDiv);
     }
@@ -56,6 +60,6 @@ function attachButtonListeners(button) {
             return alert(`Please enter a valid value between 1-100. \nYou entered ${sideLength}`);
         }
 
-        loadCells(sideLength);
+        loadCells(sideLength, true);
     });
 }
