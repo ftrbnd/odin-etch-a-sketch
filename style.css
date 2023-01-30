@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 0;
-    background-image: linear-gradient(to bottom, red , maroon);
+    background-color: rgb(175, 0, 0);
 }
 
 h1#title {
@@ -22,15 +22,21 @@ h1#title {
     margin-bottom: 100px;
 }
 
-#cells-container {
+.container {
+    width: 70rem;
+    height: 70rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 672px;
-    height: 672px;
-    border: 10px solid rgb(143, 141, 141);
-    border-radius: 15px;
+    position: relative;
+    justify-content: flex-start;
+    border: 1px solid black;
+}
+
+.cell {
+    box-sizing: border-box;
+    border: 1px dotted black;
+    background-color: rgb(108, 108, 108);
 }
 
 .left {
